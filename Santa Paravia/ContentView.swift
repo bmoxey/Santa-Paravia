@@ -124,12 +124,15 @@ struct PlayerDetailView: View {
         
         VStack {
             HStack {
-                Text("\(player.number).")
+                Image("pic111")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 48, height: 48)
                     .padding(.leading)
                 Text("\(player.title)")
-                    .frame(width: 40)
+                    .frame(width: 38)
                 TextField("Name", text: $player.name)
-                    .frame(width: 120, height: 30)
+                    .frame(width: 100, height: 30)
                     .border(.foreground)
                     .textFieldStyle(.roundedBorder)
                 Text(" of \(player.city)")

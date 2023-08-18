@@ -19,6 +19,7 @@
 		AF0E98AC2A8F4AF600ED73C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF0E98AE2A8F4AF700ED73C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF0E98B12A8F4AF700ED73C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AFE7BBBD2A8F9E6D00B42071 /* Santa-Paravia-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Santa-Paravia-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +52,7 @@
 		AF0E98A92A8F4AF600ED73C3 /* Santa Paravia */ = {
 			isa = PBXGroup;
 			children = (
+				AFE7BBBD2A8F9E6D00B42071 /* Santa-Paravia-Info.plist */,
 				AF0E98AA2A8F4AF600ED73C3 /* Santa_ParaviaApp.swift */,
 				AF0E98AC2A8F4AF600ED73C3 /* ContentView.swift */,
 				AF0E98AE2A8F4AF700ED73C3 /* Assets.xcassets */,
@@ -270,6 +272,7 @@
 				DEVELOPMENT_TEAM = 4W572TG7MY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Santa-Paravia-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +302,7 @@
 				DEVELOPMENT_TEAM = 4W572TG7MY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Santa-Paravia-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

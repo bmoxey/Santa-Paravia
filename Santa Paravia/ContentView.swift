@@ -25,6 +25,7 @@ struct PlayerStruct: Identifiable {
 let cities = ["Santa Paravia", "Fiumaccio", "Torricella", "Molinetto", "Fontanile", "Romagna"]
 let male = ["Sir", "Baron", "Count", "Marquis", "Duke", "Grand Duke", "Prince", "* H.R.H. King"]
 let female = ["Lady", "Baroness", "Countess", "Marquise", "Duchess", "Grand Duchess", "Princess", "* H.R.H. Queen"]
+let gameLevelName = ["Apprentice", "Journeyman", "Master", "Grand Master"]
 
 
 class PlayerDetailViewModel: ObservableObject {
@@ -48,110 +49,15 @@ class PlayerDetailViewModel: ObservableObject {
 struct ContentView: View {
     @StateObject private var viewModel = PlayerDetailViewModel()
     @State var year = 1400
+    @State var gameLevel: Double = 0.0
+    @State var gameStarted: Bool = false
     
     var body: some View {
-        ZStack {
-            ContainerRelativeShape()
-                .fill(Color.cyan.gradient)
-                .ignoresSafeArea()
-            VStack {
-                Text("Welcome to")
-                    .font(.title)
-                    .padding(.top)
-                Text("Santa Paravia")
-                    .font(.system (size: 48))
-                Text("and Fiumaccio")
-                    .font(.system (size: 48))
-                Text("How many people want to play?")
-                    .padding(.vertical)
-                    .font(.title3)
-                ForEach(viewModel.playerDetails.indices, id: \.self) { index in
-                    PlayerDetailView(player: $viewModel.playerDetails[index])
-                }
-                HStack {
-                    if viewModel.playerDetails.count < 6 {
-                        Button {
-                            viewModel.addPlayer()
-                        } label: {
-                            Text("Add Player")
-                                .fontWeight(.semibold)
-                                .frame(width: 150, height: 30)
-                                .foregroundColor(.white)
-                                .background(Color(.systemBlue))
-                                .cornerRadius(10)
-                                .padding()
-                        }
-                    }
-                    if viewModel.playerDetails.count > 1 {
-                        Button {
-                            viewModel.removeLastPlayer()
-                        } label: {
-                            Text("Remove Player")
-                                .fontWeight(.semibold)
-                                .frame(width: 150, height: 30)
-                                .foregroundColor(.white)
-                                .background(Color(.systemBlue))
-                                .cornerRadius(10)
-                                .padding()
-                        }
-                    }
-                    
-                }
-                Button {
-                    print("Continue")
-                } label: {
-                    Text("Continue")
-                        .fontWeight(viewModel.isContinueDisabled ? .light : .semibold)
-                        .frame(width: 150, height: 30)
-                        .foregroundColor(viewModel.isContinueDisabled ? .white : .black)
-                        .background(viewModel.isContinueDisabled ? Color.gray : Color(.green))
-                        .cornerRadius(10)
-                }
-                .disabled(viewModel.isContinueDisabled)
-                .padding()
-                Spacer()
-            }
-            .onAppear {
-                viewModel.addPlayer()
-            }
+        if gameStarted {
+            Text("Started")
+        } else {
+            GetPlayersView(viewModel: PlayerDetailViewModel(), gameStarted: $gameStarted, gameLevel: $gameLevel)
         }
-    }
-}
-
-struct PlayerDetailView: View {
-    @Binding var player: PlayerStruct
-    var body: some View {
-        
-        VStack {
-            HStack {
-                Image("pic111")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 48, height: 48)
-                    .padding(.leading)
-                Text("\(player.title)")
-                    .frame(width: 38)
-                TextField("Name", text: $player.name)
-                    .frame(width: 100, height: 30)
-                    .border(.foreground)
-                    .textFieldStyle(.roundedBorder)
-                Text(" of \(player.city)")
-                Button {
-                    player.isMale.toggle()
-                } label: {
-                    VStack {
-                        Text(player.isMale ? "♂" : "♀")
-                            .foregroundColor(player.isMale ? Color(.blue) : Color(.systemPink))
-                        Spacer()
-                    }
-                    .frame(height: 30)
-                }
-                
-                Spacer()
-            }
-            Divider()
-        }
-        
     }
 }
 

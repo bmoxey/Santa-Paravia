@@ -54,7 +54,7 @@ struct ContentView: View {
     
     var body: some View {
         if gameStarted {
-            Text("Started")
+            MainMenuView()
         } else {
             GetPlayersView(viewModel: PlayerDetailViewModel(), gameStarted: $gameStarted, gameLevel: $gameLevel)
         }

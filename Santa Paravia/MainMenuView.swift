@@ -33,8 +33,10 @@ struct MainMenuView: View {
                         Image(systemName: "person")
                     }
             }
-            .accentColor(.cyan)
-            }
+            .toolbarBackground(.visible, for: .tabBar)
+            .toolbarBackground(Color(red: 0.5, green: 1, blue: 1), for: .tabBar)
+        }
+        .accentColor(Color(red: 1, green: 0.5, blue: 0.5))
 
     }
 }

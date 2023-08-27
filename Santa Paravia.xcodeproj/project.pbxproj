@@ -29,7 +29,6 @@
 		AFC822962A902611003480D8 /* GetPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayersView.swift; sourceTree = "<group>"; };
 		AFC822982A902685003480D8 /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
 		AFE4D6ED2A94C0500025D109 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
-		AFE7BBBD2A8F9E6D00B42071 /* Santa-Paravia-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Santa-Paravia-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +61,6 @@
 		AF0E98A92A8F4AF600ED73C3 /* Santa Paravia */ = {
 			isa = PBXGroup;
 			children = (
-				AFE7BBBD2A8F9E6D00B42071 /* Santa-Paravia-Info.plist */,
 				AF0E98AA2A8F4AF600ED73C3 /* Santa_ParaviaApp.swift */,
 				AF0E98AC2A8F4AF600ED73C3 /* ContentView.swift */,
 				AF0E98AE2A8F4AF700ED73C3 /* Assets.xcassets */,

@@ -16,7 +16,8 @@ struct PlayerStatusView: View {
         HStack {
             Text("\(player.title) \(player.name) of \(player.city)")
                 .font(.title3)
-                .padding(.leading)
+                .padding(.horizontal)
+            Spacer()
             if player.number == currentPlayer {
                 Button {
                     currentPlayer += 1
@@ -24,67 +25,41 @@ struct PlayerStatusView: View {
                         currentPlayer = 1
                     }
                 } label: {
-                    Text("Play turn")
-                        .fontWeight(.semibold)
-                        .frame(width: 100, height: 30)
-                        .foregroundColor(.black)
-                        .background(Color(.green))
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+                    HStack {
+                        Text("Play turn")
+                        Image(systemName: "chevron.right")
+
+                    }
+                    .padding(.horizontal)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.black)
                 }
             }
-            Spacer()
         }
         HStack {
             Image("pic111")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 60, height: 60)
+                .frame(width: 50, height: 50)
                 .padding(.leading)
             VStack {
                 HStack  {
+                    Text("\(player.nobles)").frame(width: 60)
                     Spacer()
-                    VStack {
-                        Text("Nobles:")
-                        Text("\(player.nobles)")
-                    }
+                    Text("\(player.soldiers)").frame(width: 70)
                     Spacer()
-                    VStack {
-                        Text("Soldier:")
-                        Text("\(player.soldiers)")
-                    }
+                    Text("\(player.clergy)").frame(width: 60)
                     Spacer()
-                    VStack {
-                        Text("Clergy:")
-                        Text("\(player.clergy)")
-                    }
-                    Spacer()
-                    VStack {
-                        Text("Merchant:")
-                        Text("\(player.merchants)")
-                    }
-                    Spacer()
+                    Text("\(player.merchants)").frame(width: 90)
                 }
                 HStack {
+                    Text("\(player.serfs)").frame(width: 60)
                     Spacer()
-                    VStack {
-                        Text("Serfs:")
-                        Text("\(player.serfs)")
-                    }
+                    Text("\(player.land)").frame(width: 60)
                     Spacer()
-                    VStack {
-                        Text("Land:")
-                        Text("\(player.land)")
-                    }
-                    Spacer()
-                    VStack {
-                        Text("Treasury:")
-                        Text("\(player.treasury)")
-                    }
-                    Spacer()
+                    Text("\(player.treasury)").frame(width: 90)
                 }
             }
-            Spacer()
         }
         Divider()
     }

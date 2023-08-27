@@ -23,8 +23,27 @@ struct MainMenuView: View {
                     .font(.title)
                     .padding(.top)
                 Text("Overall standings")
+                    .font(.title2)
+                    .padding(.bottom)
+                HStack {
+                    Spacer().frame(width: 60).padding(.leading)
+                    Text("Nobles").frame(width: 60)
+                    Spacer()
+                    Text("Soldiers").frame(width: 70)
+                    Spacer()
+                    Text("Clergy").frame(width: 60)
+                    Spacer()
+                    Text("Merchants").frame(width: 90)
+                }
+                HStack {
+                    Spacer().frame(width: 60).padding(.leading)
+                    Text("Serfs").frame(width: 60)
+                    Spacer()
+                    Text("Land").frame(width: 60)
+                    Spacer()
+                    Text("Treasury").frame(width: 90)
+                }
                 ScrollView {
-                    
                     
                     ForEach(viewModel.playerDetails.indices, id: \.self) { index in
                         PlayerStatusView(player: $viewModel.playerDetails[index], currentPlayer: $currentPlayer, maxPlayers: $viewModel.playerDetails.count)

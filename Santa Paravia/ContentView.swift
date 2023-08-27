@@ -14,11 +14,31 @@ struct PlayerStruct: Identifiable {
     var city: String = ""
     var level: Int = 1
     var isMale: Bool = true
+    var customsTaxRate: Int = 25
+    var salesTaxRate: Int = 10
+    var wealthTaxRate: Int = 5
+    var justiceLevel: Int = 2
+    var treasury: Int = 1000
+    var land: Int = 10000
+    var grainReserves: Int = 5000
+    var economicValud: Int = 1
+    var nobles: Int = 4
+    var soldiers: Int = 25
+    var clergy: Int = 5
+    var merchants: Int = 25
+    var serfs: Int = 2000
+    var markets: Int = 0
+    var palaces: Int = 0
+    var cathedrals: Int = 0
+    var woolMills: Int = 0
     var title: String {
         guard level >= 0, level < male.count else {
             return "Unknown"
         }
         return isMale ? male[level] : female[level]
+    }
+    var pic: String {
+        return isMale ? "pic1\(level)\(number)" : "pic2\(level)\(number)"
     }
 }
 
@@ -51,13 +71,17 @@ struct ContentView: View {
     @State var year = 1400
     @State var gameLevel: Double = 0.0
     @State var gameStarted: Bool = false
+    @State var showInstructions: Bool = false
     
     var body: some View {
+        
         if gameStarted {
-            MainMenuView()
+            MainMenuView(viewModel: viewModel, gameLevel: $gameLevel)
+                .transition(.move(edge: .bottom))
         } else {
-            GetPlayersView(viewModel: PlayerDetailViewModel(), gameStarted: $gameStarted, gameLevel: $gameLevel)
+            GetPlayersView(viewModel: viewModel, gameStarted: $gameStarted, gameLevel: $gameLevel)
         }
+        
     }
 }
 

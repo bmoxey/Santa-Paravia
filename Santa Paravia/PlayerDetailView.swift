@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlayerDetailView: View {
     @Binding var player: PlayerStruct
+    
     var body: some View {
         
         VStack {
@@ -21,8 +22,7 @@ struct PlayerDetailView: View {
                 Text("\(player.title)")
                     .frame(width: 38)
                 TextField("Name", text: $player.name)
-                    .frame(width: 100, height: 30)
-                    .border(.foreground)
+                    .frame(width: 100, height: 25)
                     .textFieldStyle(.roundedBorder)
                 Text(" of \(player.city)")
                 Button {
@@ -39,7 +39,6 @@ struct PlayerDetailView: View {
                 Spacer()
             }
         }
-        
     }
 }
 

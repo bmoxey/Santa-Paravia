@@ -15,7 +15,7 @@ struct PlayerStatusView: View {
     var body: some View {
         HStack {
             Text("\(player.title) \(player.name) of \(player.city)")
-                .font(.title3)
+                .font(.headline)
                 .padding(.horizontal)
             Spacer()
             if player.number == currentPlayer {
@@ -37,7 +37,7 @@ struct PlayerStatusView: View {
             }
         }
         HStack {
-            Image("pic111")
+            Image("pic1\(player.number)\(player.level + 1)")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50, height: 50)
@@ -46,19 +46,21 @@ struct PlayerStatusView: View {
                 HStack  {
                     Text("\(player.nobles)").frame(width: 60)
                     Spacer()
-                    Text("\(player.soldiers)").frame(width: 70)
+                    Text("\(player.soldiers)").frame(width: 60)
                     Spacer()
                     Text("\(player.clergy)").frame(width: 60)
                     Spacer()
-                    Text("\(player.merchants)").frame(width: 90)
+                    Text("\(player.merchants)").frame(width: 60)
                 }
+                .padding(.trailing)
                 HStack {
                     Text("\(player.serfs)").frame(width: 60)
                     Spacer()
                     Text("\(player.land)").frame(width: 60)
                     Spacer()
-                    Text("\(player.treasury)").frame(width: 90)
+                    Text("\(player.treasury)").frame(width: 60)
                 }
+                .padding(.trailing)
             }
         }
         Divider()

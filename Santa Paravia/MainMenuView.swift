@@ -29,20 +29,22 @@ struct MainMenuView: View {
                     Spacer().frame(width: 60).padding(.leading)
                     Text("Nobles").frame(width: 60)
                     Spacer()
-                    Text("Soldiers").frame(width: 70)
+                    Text("Army").frame(width: 60)
                     Spacer()
                     Text("Clergy").frame(width: 60)
                     Spacer()
-                    Text("Merchants").frame(width: 90)
+                    Text("Mchts").frame(width: 60)
                 }
+                .padding(.trailing)
                 HStack {
                     Spacer().frame(width: 60).padding(.leading)
                     Text("Serfs").frame(width: 60)
                     Spacer()
                     Text("Land").frame(width: 60)
                     Spacer()
-                    Text("Treasury").frame(width: 90)
+                    Text("Money").frame(width: 60)
                 }
+                .padding(.trailing)
                 ScrollView {
                     
                     ForEach(viewModel.playerDetails.indices, id: \.self) { index in

@@ -12,7 +12,7 @@ struct PlayerStruct: Identifiable {
     var number: Int = 0
     var name: String = ""
     var city: String = ""
-    var level: Int = 1
+    var level: Int = 0
     var isMale: Bool = true
     var customsTaxRate: Int = 25
     var salesTaxRate: Int = 10
@@ -52,7 +52,7 @@ class PlayerDetailViewModel: ObservableObject {
     @Published var playerDetails: [PlayerStruct] = []
     
     func addPlayer() {
-        playerDetails.append(PlayerStruct(number: playerDetails.count + 1, city: cities[playerDetails.count], level: 0))
+        playerDetails.append(PlayerStruct(number: playerDetails.count + 1, city: cities[playerDetails.count]))
     }
     
     func removeLastPlayer() {

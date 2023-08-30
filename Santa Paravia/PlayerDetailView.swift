@@ -14,7 +14,7 @@ struct PlayerDetailView: View {
         
         VStack {
             HStack {
-                Image("pic111")
+                Image("pic1\(player.number)\(player.level + 1)")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 40, height: 40)
